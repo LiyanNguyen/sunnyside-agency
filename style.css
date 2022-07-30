@@ -122,11 +122,6 @@ nav ul li:last-child:hover {
 	color: var(--veryDarkDesaturatedBlue);
 }
 
-.mobileMenu.active {
-	display: flex;
-}
-
-
 #intro {
 	min-height: 800px;
 	background-image: url(images/desktop/image-header.jpg);
@@ -421,6 +416,10 @@ footer ul li:hover {
 
 	#hamburger {
 		display: block;
+	}
+
+	.mobileMenu.active {
+		display: flex;
 	}
 
 	#intro {
