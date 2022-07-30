@@ -1,0 +1,511 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap');
+
+:root {
+	/* PRIMARY COLORS */
+	--softRed: hsl(7, 99%, 70%);
+	--yellow: hsl(51, 100%, 49%);
+	--graphicDesignText: hsl(167, 40%, 24%);
+	--photographyText: hsl(198, 62%, 26%);
+	--footer: hsl(168, 34%, 41%);
+
+	/* NUETRAL COLORS */
+	--veryDarkDesaturatedBlue: hsl(212, 27%, 19%);
+	--veryDarkGrayishBlue: hsl(213, 9%, 39%);
+	--darkGrayishBlue: hsl(232, 10%, 55%);
+	--grayishBlue: hsl(210, 4%, 67%);
+	--white: hsl(0, 0%, 100%);
+
+	font-size: 18px;
+}
+
+.barlow {
+	font-family: 'Barlow', sans-serif;
+	font-weight: 600;
+}
+
+.fraunces {
+	font-family: 'Fraunces', serif;
+	font-weight: 700;
+	/* font-weight: 900; */
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+nav {
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 2rem;
+	z-index: 2;
+}
+
+nav ul {
+	display: flex;
+	list-style: none;
+	gap: 3rem;
+	align-items: center;
+}
+
+nav ul li {
+	cursor: pointer;
+	color: var(--white);
+	font-family: 'Barlow', sans-serif;
+	font-weight: 600;
+}
+
+nav ul li:last-child {
+	color: var(--veryDarkDesaturatedBlue);
+	background-color: var(--white);
+	padding: 1rem 2rem;
+	border-radius: 2rem;
+	font-family: 'Fraunces', serif;
+	font-weight: 900;
+	text-transform: uppercase;
+	transition: 0.25s ease;
+}
+
+nav ul li:last-child:hover {
+	background-color: #6ecffe;
+	color: var(--white);
+}
+
+#hamburger {
+	cursor: pointer;
+	display: none;
+}
+
+.mobileMenu {
+	position: absolute;
+	top: 6rem;
+	right: 1rem;
+	left: 1rem;
+	margin-right: auto;
+	margin-left: auto;
+	min-height: 5rem;
+	background-color: var(--white);
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
+	padding: 2rem;
+	text-align: center;
+	color: var(--darkGrayishBlue);
+	font-family: 'Barlow', sans-serif;
+	font-weight: 600;
+}
+
+#triangle-bottomright {
+	position: absolute;
+	top: -1.5rem;
+	right: 0;
+	width: 0;
+	height: 0;
+	border-bottom: 1.5rem solid var(--white);
+	border-left: 1.5rem solid transparent;
+}
+
+.mobileMenu p {
+	cursor: pointer;
+}
+
+.mobileMenu p:last-child {
+	padding: 1rem 2rem;
+	width: max-content;
+	background-color: var(--yellow);
+	border-radius: 2rem;
+	color: var(--veryDarkDesaturatedBlue);
+}
+
+.mobileMenu.active {
+	display: flex;
+}
+
+
+#intro {
+	min-height: 800px;
+	background-image: url(images/desktop/image-header.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+#intro h1 {
+	position: absolute;
+	top: 10rem;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 3.5rem;
+	font-family: 'Fraunces', serif;
+	font-weight: 700;
+	color: var(--white);
+	text-transform: uppercase;
+	letter-spacing: .5rem;
+	width: max-content;
+	z-index: 1;
+}
+
+#arrowDown {
+	position: absolute;
+	top: 20rem;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+/* TRANSFORM SECTION */
+#transform,
+#standout {
+	display: flex;
+}
+
+#standout {
+	flex-flow: row-reverse;
+}
+
+#transform .textContainer,
+#standout .textContainer {
+	width: 50%;
+	height: 600px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 2rem;
+	padding: 8%;
+}
+
+#transform .textContainer h2,
+#standout .textContainer h2 {
+	font-family: 'Fraunces', serif;
+	font-weight: 900;
+	font-size: 2.5rem;
+	color: var(--veryDarkDesaturatedBlue);
+}
+
+#transform .textContainer p,
+#standout .textContainer p {
+	font-family: 'Barlow', sans-serif;
+	font-weight: 600;
+	color: var(--darkGrayishBlue);
+	line-height: 1.6;
+}
+
+#transform .textContainer a,
+#standout .textContainer a {
+	position: relative;
+	font-family: 'Fraunces', serif;
+	font-weight: 900;
+	text-transform: uppercase;
+	color: var(--veryDarkDesaturatedBlue);
+	text-decoration: none;
+	width: max-content;
+	z-index: 3;
+}
+
+#transform .textContainer a::after,
+#standout .textContainer a::after {
+	position: relative;
+	display: block;
+	content: '';
+	min-height: .35rem;
+	width: 110%;
+	background-color: hsl(51, 100%, 79%);
+	border-radius: .5rem;
+	bottom: .25rem;
+	right: 5%;
+	z-index: 1;
+	transition: 0.25s ease;
+}
+
+#standout .textContainer a::after {
+	background-color: hsl(7, 99%, 90%);;
+}
+
+#transform .textContainer a:hover::after,
+#standout .textContainer a:hover::after {
+	background-color: var(--yellow);
+}
+
+#standout .textContainer a:hover::after {
+	background-color: var(--softRed);
+}
+
+#transform .imgContainer,
+#standout .imgContainer {
+	width: 50%;
+	height: 600px;
+}
+
+#transform .imgContainer img,
+#standout .imgContainer img {
+	width: 100%;
+	height: 100%;
+}
+
+/* GRAPHIC AND PHOTO SECTION */
+#graphicPhoto {
+	display: flex;
+}
+
+.graphic,
+.photography {
+	width: 50%;
+	height: 600px;
+	position: relative;
+}
+
+.graphic img,
+.photography img {
+	width: 100%;
+	height: 100%;
+}
+
+.graphic .textContainer,
+.photography .textContainer {
+	position: absolute;
+	bottom: 0;
+	padding: 8% 25%;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.graphic .textContainer h2,
+.photography .textContainer h2 {
+	font-family: 'Fraunces', serif;
+	font-weight: 900;
+	color: var(--graphicDesignText);
+}
+
+.photography .textContainer h2 {
+	color: var(--photographyText);
+}
+
+
+.graphic .textContainer p,
+.photography .textContainer p {
+	font-family: 'Barlow', sans-serif;
+	font-weight: 600;
+	color: var(--graphicDesignText);
+	line-height: 1.6;
+}
+
+.photography .textContainer p {
+	color: var(--photographyText)
+}
+
+#testimonials {
+	padding: 9rem;
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+}
+
+#testimonials h2 {
+	font-family: 'Fraunces', serif;
+	font-weight: 900;
+	text-transform: uppercase;
+	letter-spacing: .25rem;
+	color: var(--grayishBlue);
+	text-align: center;
+	font-size: 1.25rem;
+}
+
+.testimonialsContainer {
+	display: flex;
+}
+
+.userTestimonial {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 3.5rem;
+	width: 33%;
+	padding: 1.1rem;
+}
+
+.userTestimonial p {
+	font-family: 'Barlow', sans-serif;
+	font-weight: 600;
+	text-align: center;
+	color: var(--veryDarkGrayishBlue);
+	line-height: 1.6;
+}
+
+.userTestimonial img {
+	width: 4rem;
+	height: 4rem;
+	border-radius: 50%;
+}
+
+.nameContainer .name {
+	color: var(--veryDarkDesaturatedBlue);
+	font-size: 1.25rem;
+	font-family: 'Fraunces', serif;
+	font-weight: 900;
+}
+
+.nameContainer .role {
+	color: var(--grayishBlue);
+	font-size: .9rem;
+}
+
+#gallery {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#gallery .imageContainer {
+	width: 25%;
+}
+
+#gallery .imageContainer img {
+	width: 100%;
+	height: 100%;
+}
+
+footer {
+	padding: 4rem;
+	background-color: #91d4c4;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 3rem;
+}
+
+footer #logo {
+	width: 10rem;
+}
+
+footer ul {
+	display: flex;
+	gap: 4rem;
+	list-style: none;
+	font-family: 'Barlow', sans-serif;
+	font-weight: 600;
+	color: var(--footer);
+}
+
+footer ul li {
+	cursor: pointer;
+	transition: 0.25s ease;
+}
+
+footer ul li:hover {
+	color: var(--white);
+}
+
+.socialLinksContainer {
+	display: flex;
+	gap: 2rem;
+}
+
+.socialLinksContainer img {
+	cursor: pointer;
+}
+
+@media screen and (max-width: 780px) {
+	nav {
+		padding: 2rem 1rem;
+	}
+
+	nav ul {
+		display: none;
+	}
+
+	#hamburger {
+		display: block;
+	}
+
+	#intro {
+		min-height: 538px;
+		background-image: url(images/mobile/image-header.jpg);
+	}
+
+	#intro h1 {
+		top: 8rem;
+		font-size: 2rem;
+		left: initial;
+		transform: initial;
+		width: 100%;
+		text-align: center;
+	}
+
+	#arrowDown {
+		top: 16rem;
+	}
+
+	#transform,
+	#standout {
+		flex-flow: column-reverse;
+		align-items: center;
+	}
+
+	#transform .imgContainer,
+	#standout .imgContainer {
+		height: 312px;
+		width: 100%;
+	}
+
+	#transform .textContainer,
+	#standout .textContainer {
+		width: 100%;
+		height: max-content;
+		align-items: center;
+		text-align: center;
+	}
+
+	#graphicPhoto {
+		flex-direction: column;
+	}
+
+	.graphic,
+	.photography {
+		width: 100%;
+	}
+
+	.graphic .textContainer,
+	.photography .textContainer {
+		padding: 8% 5%;
+	}
+
+	#testimonials {
+		padding: 3rem 1rem;
+	}
+
+	#testimonials h2 {
+		font-size: 1rem;
+	}
+
+	.testimonialsContainer {
+		flex-direction: column;
+	}
+
+	.testimonialsContainer {
+		gap: 3rem;
+	}
+
+	.userTestimonial {
+		width: 100%;
+		padding: initial;
+		gap: 2rem;
+	}
+
+	#gallery .imageContainer {
+		width: 50%;
+	}
+
+	footer {
+		padding: 3rem;
+	}
+
+	footer ul {
+		gap: 2rem;
+	}
+}
